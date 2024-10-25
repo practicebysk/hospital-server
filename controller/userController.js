@@ -200,7 +200,7 @@ export const getUserDetails = catchAsyncErrors(async (req, res, next) => {
 export const logoutAdmin = catchAsyncErrors(async (req, res, next) => {
   res
     .status(201)
-    .cookie("adminToken", "", {
+    .cookie("adminToken", null, {
       httpOnly: true,
       expires: new Date(Date.now())
     })
@@ -214,7 +214,7 @@ export const logoutAdmin = catchAsyncErrors(async (req, res, next) => {
 export const logoutPatient = catchAsyncErrors(async (req, res, next) => {
   res
     .status(201)
-    .cookie("patientToken", "", {
+    .cookie("patientToken", null, {
       httpOnly: true,
       expires:new Date(Date.now())
     })
